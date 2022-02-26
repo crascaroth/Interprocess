@@ -1,29 +1,27 @@
 import React, { useState } from "react";
-import Context from "../GlobalState/Context.js"
+import Context from "../GlobalState/Context.js";
+
+const Provider = (props) => {
+  var [userInfo, setUserInfo] = useState({
+    name: "",
+    birthDate: "",
+    CPF: 0,
+    sex: "",
+    address: "",
+    status: false,
+  });
 
 
 
-const Provider = (props) => {    
+  const confirmation = () => console.log(userInfo)
 
-    const [teste,setTeste] = useState("oie")
-    
-    
+  const states = { userInfo };
+  const setters = { setUserInfo };
+  const requests = { confirmation };
 
-    
+  const data = { states, setters, requests };
 
-    const states = { teste }
-    const setters = {  }
-    const requests = {  }
-
-    const data = { states, setters, requests };
-
-
-
-    return (
-        <Context.Provider value={data}>
-            {props.children}
-        </Context.Provider>
-    );
-}
+  return <Context.Provider value={data}>{props.children}</Context.Provider>;
+};
 
 export default Provider;

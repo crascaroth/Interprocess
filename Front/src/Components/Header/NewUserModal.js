@@ -106,9 +106,10 @@ const NewUserModal = () => {
               setters.setUserInfo({ ...states.userInfo, status: e.target.value })
             }
             value={states.userInfo.status} />
+            <Button onClick={requests.saveUser}>clck</Button>
         </Box>
       </Modal>
-      <Button onClick={requests.confirmation}>clck</Button>
+      
     </div>
   );
 };

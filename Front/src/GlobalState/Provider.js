@@ -11,13 +11,16 @@ const Provider = (props) => {
     status: false,
   });
 
+  var [allUsers, setAllUsers] = useState([]);
 
+  const saveUser = () => {
+    setAllUsers([...allUsers, userInfo]);
+    console.log(allUsers);
+  };
 
-  const confirmation = () => console.log(userInfo)
-
-  const states = { userInfo };
-  const setters = { setUserInfo };
-  const requests = { confirmation };
+  const states = { userInfo, allUsers };
+  const setters = { setUserInfo, setAllUsers };
+  const requests = { saveUser };
 
   const data = { states, setters, requests };
 

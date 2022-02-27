@@ -1,4 +1,9 @@
-const SearchUser = () => { 
+import React, { useState, useContext } from "react";
+import Context from "../../GlobalState/Context";
+
+const SearchUser = () => {
+    
+    const { states, setters, requests } = useContext(Context);
 
     return(
         <div>

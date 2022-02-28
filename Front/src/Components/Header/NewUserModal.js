@@ -73,7 +73,7 @@ const NewUserModal = () => {
             name="CPF"
             required
             onChange={(e) =>
-              setters.setUserInfo({ ...states.userInfo, cpf: e.target.value })
+              setters.setUserInfo({ ...states.userInfo, CPF: e.target.value })
             }
             value={states.userInfo.cpf}
           />

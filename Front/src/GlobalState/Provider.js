@@ -8,19 +8,27 @@ const Provider = (props) => {
     CPF: 0,
     sex: "",
     address: "",
-    status: false,
+    status: true,
   });
 
   var [allUsers, setAllUsers] = useState([]);
+  var [nameFilter,setNameFilter] = useState("")
+  var [filteredArray,setFilteredArray] = useState([])
 
   const saveUser = () => {
     setAllUsers([...allUsers, userInfo]);
     console.log(allUsers);
   };
 
-  const states = { userInfo, allUsers };
-  const setters = { setUserInfo, setAllUsers };
-  const requests = { saveUser };
+  const filterByName = () => {
+  const filteredArray = allUsers.filter(element => element.name == nameFilter)
+  setFilteredArray(filteredArray)  
+  }
+  
+
+  const states = { userInfo, allUsers,nameFilter, filteredArray };
+  const setters = { setUserInfo, setAllUsers,setNameFilter, setFilteredArray };
+  const requests = { saveUser, filterByName };
 
   const data = { states, setters, requests };
 
